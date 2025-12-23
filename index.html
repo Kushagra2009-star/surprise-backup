@@ -158,13 +158,21 @@
     </div>
 
     <!-- Video Container -->
-<div class="video-container" id="videoContainer">
-    <div class="close-video" onclick="closeVideo()">✕ Close</div>
-    <video id="surpriseVideo" controls playsinline>
-        <source src="Your paragraph text.mp4" type="video/mp4">
+    <div class="video-container" id="videoContainer">
+        <div class="close-video" onclick="closeVideo()">✕ Close</div>
+        <video id="surpriseVideo" controls playsinline>
+            <source src="Your paragraph text.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="your-music-file.mp3" type="audio/mpeg">
+        <source src="your-music-file.ogg" type="audio/ogg">
         
-    </video>
-</div>
-<script src="script.js"></script>
+    </audio>
+
+    <script src="script.js"></script>
 </body>
 </html>
