@@ -145,15 +145,38 @@ async function startAnimation() {
     document.getElementById('giftContainer').classList.add('show');
 }
 
+// Gift box click handler with music
 document.getElementById('giftContainer').addEventListener('click', () => {
-    document.getElementById('videoContainer').classList.add('show');
-    document.getElementById('surpriseVideo').play();
+    const videoContainer = document.getElementById('videoContainer');
+    const video = document.getElementById('surpriseVideo');
+    const music = document.getElementById('backgroundMusic');
+    
+    videoContainer.classList.add('show');
+    
+    // Play video
+    video.play();
+    
+    // Play background music
+    music.play().catch(error => {
+        console.log('Music autoplay prevented:', error);
+    });
 });
 
+// Close video handler
 function closeVideo() {
     const videoContainer = document.getElementById('videoContainer');
     const video = document.getElementById('surpriseVideo');
+    const music = document.getElementById('backgroundMusic');
+    
+    // Pause and reset video
     video.pause();
+    video.currentTime = 0;
+    
+    // Pause and reset music
+    music.pause();
+    music.currentTime = 0;
+    
+    // Hide video container
     videoContainer.classList.remove('show');
 }
 
